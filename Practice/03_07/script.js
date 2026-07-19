@@ -110,3 +110,20 @@ const jarra = {
     anchoBase: 12,
   },
 };
+
+// Objeto 6: Cajonera
+const cajonera = {
+  color: 'rojo',
+  material: 'plastico',
+  cajones: {
+    cajon1: {
+      caja: {
+        material: 'cartón',
+        objetos: ['fotos antiguas', 'negativos', 'cartas'] // Un array para varios objetos
+      }
+    },
+    cajon2: {
+      contenido: 'cables'
+    }
+  }
+};
