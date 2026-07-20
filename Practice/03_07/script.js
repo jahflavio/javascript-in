@@ -29,37 +29,42 @@ const maceta = {
   // Método para regar: actualiza la humedad y la fecha
   regar(cantidadMl) {
     if (cantidadMl > 500) {
-      console.warn("¡Cuidado! Demasiada agua, podrías ahogar la planta.");
+      console.warn(
+        '¡Cuidado! Demasiada agua, podrías ahogar la planta.',
+      );
     }
-    this.estado.humedad += (cantidadMl / 10); // Ejemplo de lógica: 100ml aumentan 10%
+    this.estado.humedad += cantidadMl / 10; // Ejemplo de lógica: 100ml aumentan 10%
     this.estado.ultimaVezRegada = new Date().toLocaleDateString();
-    console.log(`Regaste la planta. Humedad actual: ${this.estado.humedad}%`);
+    console.log(
+      `Regaste la planta. Humedad actual: ${this.estado.humedad}%`,
+    );
   },
 
   // Método para podar: reduce el número de ramas
   podar(cantidad) {
     if (this.ramas - cantidad < 0) {
-      console.error("No puedes podar más ramas de las que existen.");
+      console.error('No puedes podar más ramas de las que existen.');
       return;
     }
     this.ramas -= cantidad;
-    console.log(`Podaste ${cantidad} ramas. Ahora quedan: ${this.ramas}`);
+    console.log(
+      `Podaste ${cantidad} ramas. Ahora quedan: ${this.ramas}`,
+    );
   },
 
   // Método para verificar si necesita mantenimiento
   necesitaAtencion() {
     if (this.estado.humedad < 30) {
-      return "¡La planta necesita agua urgentemente!";
+      return '¡La planta necesita agua urgentemente!';
     }
-    return "La planta está en buenas condiciones.";
-  }
+    return 'La planta está en buenas condiciones.';
+  },
 };
 
 // --- Ejemplos de uso ---
-maceta.regar(200);          // Aumenta la humedad y registra la fecha
-maceta.podar(2);            // Reduce el número de ramas
+maceta.regar(200); // Aumenta la humedad y registra la fecha
+maceta.podar(2); // Reduce el número de ramas
 console.log(maceta.necesitaAtencion()); // Evalúa el estado actual
-};
 
 // Objeto 2: Comedor
 const comedor = {
@@ -119,11 +124,14 @@ const cajonera = {
     cajon1: {
       caja: {
         material: 'cartón',
-        objetos: ['fotos antiguas', 'negativos', 'cartas'] // Un array para varios objetos
-      }
+        objetos: ['fotos antiguas', 'negativos', 'cartas'], // Un array para varios objetos
+      },
     },
     cajon2: {
-      contenido: 'cables'
-    }
-  }
+      contenido: 'cables',
+    },
+  },
 };
+
+console.log('Maceta objeto', maceta);
+console.log('cajonera objeto', cajonera.cajones.cajon1.caja.objetos);
