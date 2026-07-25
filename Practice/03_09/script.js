@@ -8,19 +8,53 @@
  */
 
 const backpack = {
-  name: "Everyday Backpack",
+  name: 'Everyday Backpack',
   volume: 30,
-  color: "grey",
+  color: 'grey',
   pocketNum: 15,
   strapLength: {
     left: 26,
     right: 26,
   },
-  toggleLid: function (lidStatus) {
+  lidOpen: false,
+  toggleLid(lidStatus) {
     this.lidOpen = lidStatus;
   },
-  newStrapLength: function (lengthLeft, lengthRight) {
+  newStrapLength(lengthLeft, lengthRight) {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  changeName(newName) {
+    this.name = newName;
+  },
+  changeVolume(newVolume) {
+    this.volume = newVolume;
+  },
+  changeColor(newColor) {
+    this.color = newColor;
+  },
+  changePocketNum(newPocketNum) {
+    this.pocketNum = newPocketNum;
+  },
 };
+
+// --- Prueba de métodos ---
+
+// 1. Ver el estado inicial
+console.log('Objeto inicial:', backpack);
+
+// 2. Modificar las propiedades usando tus nuevos métodos
+backpack.changeName('Traveler Pro Backpack');
+backpack.changeVolume(40);
+backpack.changeColor('black');
+backpack.changePocketNum(18);
+
+// Pruebas de los métodos que ya tenías
+backpack.toggleLid(true);
+backpack.newStrapLength(30, 30);
+
+// 3. Confirmar que las propiedades cambiaron
+console.log('Objeto actualizado:', backpack);
+
+// O probar una propiedad específica:
+console.log('Nuevo nombre:', backpack.name); // "Traveler Pro Backpack"

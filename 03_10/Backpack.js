@@ -14,7 +14,7 @@ class Backpack {
     pocketNum,
     strapLengthL,
     strapLengthR,
-    lidOpen
+    lidOpen,
   ) {
     // Define properties:
     this.name = name;
