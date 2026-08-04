@@ -117,3 +117,12 @@ console.log(
   miCajonera.cajones.cajon1.caja.objetos[2],
 ); // Debe decir "cartas"
 console.groupEnd();
+
+// Pega esto al final de script.js
+console.log('--- EXPERIMENTOS DE PROTOTIPOS ---');
+console.log('ADN de la Jarra:', Object.getPrototypeOf(miJarra));
+console.log('¿Tiene marca propia?:', miJarra.hasOwnProperty('marca'));
+console.log(
+  '¿Tiene la instrucción servirAgua?:',
+  miJarra.hasOwnProperty('servirAgua'),
+);
